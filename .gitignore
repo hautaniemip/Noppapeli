@@ -102,3 +102,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# MariaDB Docker container data directory
+backend/data
