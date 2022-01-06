@@ -1,0 +1,89 @@
+BEGIN:VCALENDAR
+METHOD:PUBLISH
+PRODID:-//Moodle Pty Ltd//NONSGML Moodle Version 2020061511//EN
+VERSION:2.0
+BEGIN:VEVENT
+UID:812120@moodle.lut.fi
+SUMMARY:Kurssin tekninen loppukysely (Questionnaire Closes)
+DESCRIPTION:Kurssin tekninen loppukysely
+CLASS:PUBLIC
+LAST-MODIFIED:20211217T120148Z
+DTSTAMP:20220105T120830Z
+DTSTART:20211231T220000Z
+DTEND:20211231T220000Z
+CATEGORIES:CT60A0203 Luento-opetus suomeksi 6.9.2021-17.12.2021
+END:VEVENT
+BEGIN:VEVENT
+UID:275142@moodle.lut.fi
+SUMMARY:Ohjelmistotuotannon monivalintatentti\, Joulu-Tammikuu 21-22 sulkeu
+	tuu
+	
+DESCRIPTION:Tentissä sinulle arvotaan 30 monivalintatehtävää laajemmasta jo
+	ukosta tehtäviä. Kaikki tehtävät ovat joko muotoa "valitse oikea vaihtoehto
+	"\, jolloin voit valita vain yhden vastauksen\, tai "valitse kaikki oikeat 
+	vaihtoehdot"\, jolloin voit valita useamman. Jokainen tehtävä on arvoltaan 
+	yhteensä 2 pistettä.\n\nTehtävistä joissa valitaan kaikki oikeat vaihtoehdo
+	t saat pisteet sen mukaan kuinka monta oikeaa vastausta valitsit. Väärästä 
+	valinnasta saa -1 pistettä per väärä valinta\, ja vastaamatta jättämisestä 
+	0 pistettä. \n\nTehtävissä missä valitaan oikea vaihtoehto oikeita vastauks
+	ia on aina yksi ja siitä saa 2 pistettä. Väärä vastaus on -1 piste\, ja vas
+	taamatta jättäminen on 0 pistettä.\n\nSinulla on 60 minuuttia aikaa siitä h
+	etkestä kun aloitat\, eikä tätä laskuria voi keskeyttää tai pysäyttää etkä 
+	voi aloittaa alusta kesken tentin. Ajan päättyessä siihen mennessä antamasi
+	 vastaukset palautetaan lopullisina vastauksina. Voit samalla kertaa yrittä
+	ä tenttiä kolme kertaa\, ja näistä yrityksistä paras tulos jää voimaan. Oik
+	eita vastauksia ei erikseen julkaista\, ja teknisistä rajoitteista johtuen 
+	pistemäärät julkaistaan vasta kun tentti on kaikkien kurssia suorittavien o
+	salta sulkeutunut.  \n\n
+	
+CLASS:PUBLIC
+LAST-MODIFIED:20211213T095308Z
+DTSTAMP:20220105T120830Z
+DTSTART:20220107T215900Z
+DTEND:20220107T215900Z
+CATEGORIES:CT60A4002 Luento-opetus 6.9.2021-17.12.2021
+END:VEVENT
+BEGIN:VEVENT
+UID:349106@moodle.lut.fi
+SUMMARY:Ohjelmistotuotannon monivalintatentti lisäajalla\, Joulu-Tammikuu 2
+	1-22 sulkeutuu
+	
+DESCRIPTION:JOS SINULLA ON LÄÄKÄRINTODISTUKSEN TAI OPINTOTOIMISTON MYÖNTÄMÄ
+	 OIKEUS PIDENNETTYYN TENTTIAIKAAN ja olet etukäteen ilmoittautunut luennoij
+	alle\, niin SUORITA TÄMÄ TENTTI. Opiskelijat joilla ko. oikeutta ei ole saa
+	vat tästä tentistä automaattisesti hylätyn suorituksen nollalla pisteellä i
+	lman että palautuksia tarkastetaan. Maksimisuoritusaika 120 minuuttia\, ohj
+	eet muuten samat kuin lisäajattomassa tentissä.\n
+	
+CLASS:PUBLIC
+LAST-MODIFIED:20211213T095502Z
+DTSTAMP:20220105T120830Z
+DTSTART:20220107T215900Z
+DTEND:20220107T215900Z
+CATEGORIES:CT60A4002 Luento-opetus 6.9.2021-17.12.2021
+END:VEVENT
+BEGIN:VEVENT
+UID:811107@moodle.lut.fi
+SUMMARY:Suoritan kurssin vasta periodissa 4 sulkeutuu
+DESCRIPTION:Voit ilmoittaa tämän linkin kautta mikäli haluat suorittaa kurs
+	sin vasta neljännellä periodilla. Hoidamme siirron SISU:ssa puolestasi.\n\n
+	
+CLASS:PUBLIC
+LAST-MODIFIED:20211216T170914Z
+DTSTAMP:20220105T120830Z
+DTSTART:20220116T215900Z
+DTEND:20220116T215900Z
+CATEGORIES:CS90A0020 Full digi / 100% verkossa 10.1.2022-27.2.2022
+END:VEVENT
+BEGIN:VEVENT
+UID:921736@moodle.lut.fi
+SUMMARY:Return Assignment 1 here - Part 1
+DESCRIPTION:Return your work as PDF.
+CLASS:PUBLIC
+LAST-MODIFIED:20220104T073531Z
+DTSTAMP:20220105T120830Z
+DTSTART:20220124T215900Z
+DTEND:20220124T215900Z
+CATEGORIES:CT30A2803 Luento-opetus 10.1.2022-22.4.2022
+END:VEVENT
+END:VCALENDAR
