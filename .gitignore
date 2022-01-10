@@ -105,3 +105,6 @@ dist
 
 # MariaDB Docker container data directory
 backend/data
+
+# Expo cache
+cache
