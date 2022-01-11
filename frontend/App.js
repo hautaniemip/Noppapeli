@@ -1,4 +1,4 @@
-import { React, useState } from 'react'
+import React from 'react'
 import { StatusBar } from 'expo-status-bar';
 import { TouchableOpacity, StyleSheet, Text, SafeAreaView, FlatList, View, Button } from 'react-native';
 import TodoInput from "./TodoInput";
@@ -6,7 +6,7 @@ import TodoItem from "./TodoItem";
 
 export default function App() {
 
-	const [todoItems, setTodoItems] = useState([{text: "Buy groceries", completed: true}, {text: "Make blogpost", completed: false}])
+	const [todoItems, setTodoItems] = React.useState([{text: "Buy groceries", completed: true}, {text: "Make blogpost", completed: false}])
 
 
 	function addTodoItem(_text)  {
