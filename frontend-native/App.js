@@ -1,7 +1,10 @@
 import React from 'react'
 import { TouchableOpacity, StyleSheet, Text, SafeAreaView, FlatList, View, Button, StatusBar } from 'react-native';
-import TodoInput from "./TodoInput";
-import TodoItem from "./TodoItem";
+import DocumentPicker from 'react-native-document-picker';
+import FileSystem from 'react-native-fs';
+import CalParser from 'cal-parser';
+import TodoInput from './TodoInput';
+import TodoItem from './TodoItem';
 
 export default function App() {
 
@@ -24,13 +27,35 @@ export default function App() {
 		setTodoItems(tempArr)
 	}
 
+	async function pickFile() {
+		try {
+			const res = await DocumentPicker.pickSingle();
+			const data = await FileSystem.readFile(res.uri);
+			const parsedCal = CalParser.parseString(data);
+			console.log(parsedCal.events);
+			let tempArr = []
+			for (const calEvent of parsedCal.events) {
+				tempArr.push({text: calEvent.categories.value, completed: false});
+				console.log(calEvent);
+			}
+			setTodoItems([...todoItems, ...tempArr]);
+		} catch (e) {
+			if (DocumentPicker.isCancel(e)) {
+				console.warn('Canceled')
+			} else {
+				throw e
+			}
+		}
+	}
+
 	return (
 		<>
 			<StatusBar barStyle={"light-content"} backgroundColor={"#212121"}/>
-			<SafeAreaView style={{padding: 16}}>
+			<SafeAreaView style={{padding: 16, flex: 1}}>
 				<Text style={{fontSize: 36, fontWeight: 'bold'}}>Todo</Text>
 				<FlatList
 					data={todoItems}
+					style={{flex: 1}}
 					keyExtractor={(item, index) => index.toString()}
 					renderItem={({item, index}) => {
 						return (
@@ -43,6 +68,9 @@ export default function App() {
 					}}
 				/>
 				<TodoInput onPress={addTodoItem} />
+				<TouchableOpacity onPress={pickFile}>
+					<Text>Pick File...</Text>
+				</TouchableOpacity>
 			</SafeAreaView>
 		</>
 	);
