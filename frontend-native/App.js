@@ -2,6 +2,7 @@ import React from 'react'
 import { TouchableOpacity, StyleSheet, Text, SafeAreaView, FlatList, View, Button, StatusBar } from 'react-native';
 import DocumentPicker from 'react-native-document-picker';
 import FileSystem from 'react-native-fs';
+import DeviceInfo from 'react-native-device-info';
 import CalParser from 'cal-parser';
 import TodoInput from './src/component/TodoInput';
 import TodoItem from './src/component/TodoItem';
@@ -12,7 +13,9 @@ export default function App() {
 
 
 	function addTodoItem(_text)  {
-		setTodoItems([...todoItems, {text: _text, completed: false}]);
+		if (_text) {
+			setTodoItems([...todoItems, {text: _text, completed: false}]);
+		}
 	}
 
 	function deleteTodoItem(_index) {
@@ -23,13 +26,14 @@ export default function App() {
 
 	function completeTodoItem(_index) {
 		let tempArr = [...todoItems];
-		tempArr[_index].completed = true;
+		tempArr[_index].completed = !tempArr[_index].completed;
 		setTodoItems(tempArr)
 	}
 
 	async function pickFile() {
 		try {
-			const res = await DocumentPicker.pickSingle();
+			console.log(DeviceInfo.getUniqueId());
+			const res = await DocumentPicker.pickSingle({type: 'text/calendar'});
 			const data = await FileSystem.readFile(res.uri);
 			const parsedCal = CalParser.parseString(data);
 			console.log(parsedCal.events);
