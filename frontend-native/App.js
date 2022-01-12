@@ -3,8 +3,8 @@ import { TouchableOpacity, StyleSheet, Text, SafeAreaView, FlatList, View, Butto
 import DocumentPicker from 'react-native-document-picker';
 import FileSystem from 'react-native-fs';
 import CalParser from 'cal-parser';
-import TodoInput from './TodoInput';
-import TodoItem from './TodoItem';
+import TodoInput from './src/component/TodoInput';
+import TodoItem from './src/component/TodoItem';
 
 export default function App() {
 
