@@ -83,7 +83,7 @@ export default function App() {
 			console.log(parsedCal.events);
 			let tempArr = []
 			for (const calEvent of parsedCal.events) {
-				tempArr.push({text: calEvent.categories.value, time: calEvent.dtend.value.toString().slice(0, -18), completed: false});
+				tempArr.push({text: calEvent.categories.value, time: calEvent.dtend.value, completed: false});
 				console.log(calEvent);
 			}
 			setTodoItems([...todoItems, ...tempArr]);
