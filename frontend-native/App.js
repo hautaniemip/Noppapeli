@@ -12,7 +12,7 @@ import RollDice from './RollDice';
 
 export default function App() {
 
-	const [todoItems, setTodoItems] = React.useState([{text: "Buy groceries", time: "123456", completed: true}, {text: "Make blogpost", time: "12343221", completed: false}])
+	const [todoItems, setTodoItems] = React.useState([{text: "Buy groceries", time: 123456, completed: true}, {text: "Make blogpost", time: 1234322, completed: false}])
 	const Tab = createBottomTabNavigator();
 
 	function addTodoItem(_text)  {
@@ -24,7 +24,7 @@ export default function App() {
 	  const FriendsScreen = ({ navigation }) => {
 		return (
 			<SafeAreaView>
-				<text>???</text>
+				<Text>???</Text>
 			</SafeAreaView>
 		);
 	  };

@@ -1,9 +1,8 @@
 import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
-import Intl from 'react-native-intl';
 
 export default function TodoItem(props) {
-	const [time, setTime] = React.useState('');
+	const [time, setTime] = React.useState(formatTime(props.item.time));
 	let style = props.item.completed ? {
 		textDecorationLine: 'line-through'
 	} : {
@@ -11,12 +10,11 @@ export default function TodoItem(props) {
 	}
 
 	function formatTime(_time) {
-		let options = {hour: 'numeric', minute: 'numeric', hour12: false, hourCycle: 'h23'}
-		new Intl.DateTimeFormat('fi-FI', options).format(_time).then(
-			str => {
-				console.log(str);
-				setTime(str.slice(0, -3));
-		});
+		_time = new Date(_time);
+		console.log(_time);
+		let formatedTime = `${_time.getDate()}.${_time.getMonth() + 1}.${_time.getFullYear()} ${_time.getHours()}:${_time.getMinutes()}`;
+		console.log(formatedTime);
+		return formatedTime;
 	}
 
 	return (
@@ -25,7 +23,7 @@ export default function TodoItem(props) {
 			style={{paddingVerticcal: 8, marginVertical: 10, flexDirection: 'row', justifyContent: 'space-between'}}>
 			<View style={{flex: 1}}>
 				<Text style={[{fontSize: 18}, style]}>{props.item.text}</Text>
-				<Text style={[{fontSize: 18}, style]} onLayout={formatTime(props.item.time)}>{time}</Text>
+				<Text style={[{fontSize: 18}, style]}>{time}</Text>
 			</View>
 			<TouchableOpacity
 				style={{padding: 8, backgroundColor: '#212121', justifyContent: 'center', alignItems: 'center', borderRadius: 8}}
