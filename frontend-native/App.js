@@ -1,7 +1,6 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { TouchableOpacity, StyleSheet, Text, SafeAreaView, FlatList, View, Button, StatusBar } from 'react-native';
 import CalenderScreen from './src/component/CalenderScreen';
 import SocialScreen from './src/component/SocialScreen';
 import NoppaScreen from './src/component/NoppaScreen';

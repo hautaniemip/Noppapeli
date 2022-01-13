@@ -12,36 +12,8 @@ import TodoItem from './TodoItem';
 export default function CalenderScreen({ navigation }) {
 	const [todoItems, setTodoItems] = React.useState([{text: "Buy groceries", time: 123456, completed: true}, {text: "Make blogpost", time: 1234322, completed: false}])
 
-	return (
-		<>
-			<StatusBar barStyle={"light-content"} backgroundColor={"#212121"}/>
-			<SafeAreaView style={{padding: 16, flex: 1}}>
-				<Text style={{fontSize: 36, fontWeight: 'bold'}}>Todo</Text>
-				<FlatList
-					data={todoItems}
-					style={{flex: 1}}
-					keyExtractor={(item, index) => index.toString()}
-					data={todoItems.sort((a,  b) => a.time > b.time ? 1 : -1)}
-					renderItem={({item, index}) => {
-						return (
-							<TodoItem
-								item={item}
-								deleteFunction={() => deleteTodoItem(index)}
-								completeFunction={() => completeTodoItem(index)}
-							/>
-						)
-					}}
-				/>
-				<TodoInput onPress={addTodoItem} />
-				<TouchableOpacity onPress={pickFile}>
-					<Text>Pick File...</Text>
-				</TouchableOpacity>
-			</SafeAreaView>
-		</>
-		);
-	  }
 
-      function addTodoItem(_text)  {
+    function addTodoItem(_text)  {
 		if (_text) {
 			setTodoItems([...todoItems, {text: _text, time: "0", completed: false}]);
 		}
@@ -79,6 +51,33 @@ export default function CalenderScreen({ navigation }) {
 				throw e
 			}
 		}
-	}
+    }
 
-    
+	return (
+		<>
+			<StatusBar barStyle={"light-content"} backgroundColor={"#212121"}/>
+			<SafeAreaView style={{padding: 16, flex: 1}}>
+				<Text style={{fontSize: 36, fontWeight: 'bold'}}>Todo</Text>
+				<FlatList
+					data={todoItems}
+					style={{flex: 1}}
+					keyExtractor={(item, index) => index.toString()}
+					data={todoItems.sort((a,  b) => a.time > b.time ? 1 : -1)}
+					renderItem={({item, index}) => {
+						return (
+							<TodoItem
+								item={item}
+								deleteFunction={() => deleteTodoItem(index)}
+								completeFunction={() => completeTodoItem(index)}
+							/>
+						)
+					}}
+				/>
+				<TodoInput onPress={addTodoItem} />
+				<TouchableOpacity onPress={pickFile}>
+					<Text>Pick File...</Text>
+				</TouchableOpacity>
+			</SafeAreaView>
+		</>
+		);
+	  }
