@@ -3,7 +3,6 @@ import { TouchableOpacity, Text, SafeAreaView, FlatList, StatusBar, View } from 
 import DocumentPicker from 'react-native-document-picker';
 import FileSystem from 'react-native-fs';
 import DeviceInfo from 'react-native-device-info';
-import DateTimePicker from '@react-native-community/datetimepicker';
 import CalParser from 'cal-parser';
 import TodoInput from './TodoInput';
 import TodoItem from './TodoItem';
@@ -13,28 +12,6 @@ import { globalStyles } from '../../styles/global';
 
 export default function CalenderScreen({ navigation }) {
 	const [todoItems, setTodoItems] = React.useState([{text: "Buy groceries", time: new Date(123456), formatedTime: formatTime(new Date(123456)), completed: true}, {text: "Make blogpost", time: new Date(1234322), formatedTime: formatTime(new Date(1234322)), completed: false}])
-	const [date, setDate] = React.useState(new Date());
-	const [mode, setMode] = React.useState('date');
-	const [show, setShow] = React.useState(false);
-
-	function onChange(event, selectedDate) {
-		const currentDate = selectedDate || date;
-		setShow(Platform.OS === 'ios');
-		setDate(currentDate);
-	};
-
-	function showMode(currentMode) {
-		setShow(true);
-		setMode(currentMode);
-	};
-
-	function showDatepicker() {
-		showMode('date');
-	};
-
-	function showTimepicker() {
-		showMode('time');
-	};
 
 	function addTodoItem(_text)  {
 		if (_text) {
@@ -105,27 +82,9 @@ export default function CalenderScreen({ navigation }) {
 					}}
 				/>
 				<TodoInput onPress={addTodoItem} />
-				<View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-					<TouchableOpacity style={{flex: 1}} onPress={showDatepicker}>
-						<Text>{formatTime(date).slice(0, -6)}</Text>
-					</TouchableOpacity>
-					<TouchableOpacity style={{flex: 1}} onPress={showTimepicker}>
-						<Text>{formatTime(date).slice(-6)}</Text>
-					</TouchableOpacity>
-				</View>
 				<TouchableOpacity onPress={pickFile}>
 					<Text>Pick File...</Text>
 				</TouchableOpacity>
-				{show && (
-				<DateTimePicker
-					testID="dateTimePicker"
-					value={date}
-					mode={mode}
-					is24Hour={true}
-					display="default"
-					onChange={onChange}
-				/>
-				)}
 			</SafeAreaView>
 		</>
 		);

@@ -53,6 +53,11 @@ export const globalStyles = StyleSheet.create({
         fontSize: 18,
         textDecorationLine: 'none'
     },
+	dateTimeText: {
+		fontSize: 16,
+		textDecorationLine: 'underline',
+		marginHorizontal: 10
+	},
 
 
     diceContainer: {
