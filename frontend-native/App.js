@@ -12,15 +12,18 @@ export default function App() {
 	return (
 		<NavigationContainer >
 			<Tab.Navigator initialRouteName="Noppa">
-			  <Tab.Screen
+			  	<Tab.Screen
 				name="Kaverit"
 				component={SocialScreen}
-			  />
-			  <Tab.Screen 
-			  name="Noppa" 
-			  component={NoppaScreen}
-			   />
-			  <Tab.Screen name="Kalenteri" component={CalenderScreen}/>
+			  	/>
+			  	<Tab.Screen 
+			  	name="Noppa" 
+			  	component={NoppaScreen}
+				/>
+				<Tab.Screen 
+				name="Kalenteri" 
+				component={CalenderScreen}
+		  		/>
 			</Tab.Navigator>
 		</NavigationContainer>
 	);
