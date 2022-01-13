@@ -9,7 +9,7 @@ import TodoItem from './src/component/TodoItem';
 
 export default function App() {
 
-	const [todoItems, setTodoItems] = React.useState([{text: "Buy groceries", time: "123456", completed: true}, {text: "Make blogpost", time: "12343221", completed: false}])
+	const [todoItems, setTodoItems] = React.useState([{text: "Buy groceries", time: 1233242, completed: true}, {text: "Make blogpost", time: 1234567, completed: false}]);
 
 
 	function addTodoItem(_text)  {
@@ -39,7 +39,7 @@ export default function App() {
 			console.log(parsedCal.events);
 			let tempArr = []
 			for (const calEvent of parsedCal.events) {
-				tempArr.push({text: calEvent.categories.value, time: calEvent.dtend.value.toString().slice(0, -18), completed: false});
+				tempArr.push({text: calEvent.categories.value, time: calEvent.dtend.value, completed: false});
 				console.log(calEvent);
 			}
 			setTodoItems([...todoItems, ...tempArr]);
