@@ -12,7 +12,7 @@ export default function TodoItem(props) {
 	function formatTime(_time) {
 		_time = new Date(_time);
 		console.log(_time);
-		let formatedTime = `${_time.getDate()}.${_time.getMonth() + 1}.${_time.getFullYear()} ${_time.getHours()}:${_time.getMinutes()}`;
+		let formatedTime = `${_time.getDate()}.${_time.getMonth() + 1}.${_time.getFullYear()} ${_time.getHours().toString().padStart(2, '0')}:${_time.getMinutes().toString().padStart(2, '0')}`;
 		console.log(formatedTime);
 		return formatedTime;
 	}

@@ -8,10 +8,7 @@ import NoppaScreen from './src/component/NoppaScreen';
 
 export default function App() {
 
-
 	const Tab = createBottomTabNavigator();
-
-
 
 	return (
 		<NavigationContainer >

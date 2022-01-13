@@ -21,6 +21,7 @@ export default function CalenderScreen({ navigation }) {
 					data={todoItems}
 					style={{flex: 1}}
 					keyExtractor={(item, index) => index.toString()}
+					data={todoItems.sort((a,  b) => a.time > b.time ? 1 : -1)}
 					renderItem={({item, index}) => {
 						return (
 							<TodoItem
