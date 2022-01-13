@@ -56,12 +56,12 @@ export default function TodoInput(props) {
 					<Text style={globalStyles.buttonText}>Add</Text>
 				</TouchableOpacity>
 			</View>
-			<View style={globalStyles.inputContainer}>
-				<TouchableOpacity style={{flex: 1}} onPress={showDatepicker}>
-					<Text style={[globalStyles.dateTimeText, {textAlign: 'right'}]}>{formatTime(date).slice(0, -6)}</Text>
+			<View style={globalStyles.buttonContainer}>
+				<TouchableOpacity style={globalStyles.inputButton} onPress={showDatepicker}>
+					<Text style={globalStyles.buttonText}>{formatTime(date).slice(0, -6)}</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={{flex: 1}} onPress={showTimepicker}>
-					<Text style={globalStyles.dateTimeText}>{formatTime(date).slice(-6)}</Text>
+				<TouchableOpacity style={globalStyles.inputButton} onPress={showTimepicker}>
+					<Text style={globalStyles.buttonText}>{formatTime(date).slice(-5)}</Text>
 				</TouchableOpacity>
 			</View>
 			{show && (
