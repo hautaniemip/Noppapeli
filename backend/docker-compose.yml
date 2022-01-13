@@ -1,0 +1,28 @@
+version: "3.9"
+services:
+
+  node:
+    image: "node:latest"
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./node:/home/node/app
+      - ./run/mysqld:/run/mysqld
+    ports:
+      - "3000:3000"
+    command: "npm start"
+
+
+
+
+  db:
+    image: "mariadb:latest"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./run/mysqld:/run/mysqld
+      - ./data:/var/lib/mysql
