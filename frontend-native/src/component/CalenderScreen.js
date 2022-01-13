@@ -1,8 +1,9 @@
 import React from 'react';
-import { TouchableOpacity, Text, SafeAreaView, FlatList, StatusBar } from 'react-native';
+import { TouchableOpacity, Text, SafeAreaView, FlatList, StatusBar, View } from 'react-native';
 import DocumentPicker from 'react-native-document-picker';
 import FileSystem from 'react-native-fs';
 import DeviceInfo from 'react-native-device-info';
+import DateTimePicker from '@react-native-community/datetimepicker';
 import CalParser from 'cal-parser';
 import TodoInput from './TodoInput';
 import TodoItem from './TodoItem';
@@ -11,15 +12,36 @@ import TodoItem from './TodoItem';
 
 export default function CalenderScreen({ navigation }) {
 	const [todoItems, setTodoItems] = React.useState([{text: "Buy groceries", time: new Date(123456), formatedTime: formatTime(new Date(123456)), completed: true}, {text: "Make blogpost", time: new Date(1234322), formatedTime: formatTime(new Date(1234322)), completed: false}])
+	const [date, setDate] = React.useState(new Date(1598051730000));
+	const [mode, setMode] = React.useState('date');
+	const [show, setShow] = React.useState(false);
 
+	function onChange(event, selectedDate) {
+		const currentDate = selectedDate || date;
+		setShow(Platform.OS === 'ios');
+		setDate(currentDate);
+	};
 
-    function addTodoItem(_text)  {
+	function showMode(currentMode) {
+		setShow(true);
+		setMode(currentMode);
+	};
+
+	function showDatepicker() {
+		showMode('date');
+	};
+
+	function showTimepicker() {
+		showMode('time');
+	};
+
+	function addTodoItem(_text)  {
 		if (_text) {
-			setTodoItems([{text: _text, time: new Date(0), formatedTime: formatTime(new Date(0)), completed: false}, ...todoItems]);
+			setTodoItems([{text: _text, time: date, formatedTime: formatTime(date), completed: false}, ...todoItems]);
 		}
 	}
 
-      function deleteTodoItem(_index) {
+	function deleteTodoItem(_index) {
 		let tempArr = [...todoItems];
 		tempArr.splice(_index, 1);
 		setTodoItems(tempArr);
@@ -59,7 +81,7 @@ export default function CalenderScreen({ navigation }) {
 				throw e
 			}
 		}
-    }
+	}
 
 	return (
 		<>
@@ -82,9 +104,27 @@ export default function CalenderScreen({ navigation }) {
 					}}
 				/>
 				<TodoInput onPress={addTodoItem} />
+				<View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+					<TouchableOpacity style={{flex: 1}} onPress={showDatepicker}>
+						<Text>{formatTime(date).slice(0, -6)}</Text>
+					</TouchableOpacity>
+					<TouchableOpacity style={{flex: 1}} onPress={showTimepicker}>
+						<Text>{formatTime(date).slice(-6)}</Text>
+					</TouchableOpacity>
+				</View>
 				<TouchableOpacity onPress={pickFile}>
 					<Text>Pick File...</Text>
 				</TouchableOpacity>
+				{show && (
+				<DateTimePicker
+					testID="dateTimePicker"
+					value={date}
+					mode={mode}
+					is24Hour={true}
+					display="default"
+					onChange={onChange}
+				/>
+				)}
 			</SafeAreaView>
 		</>
 		);
