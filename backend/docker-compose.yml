@@ -9,6 +9,7 @@ services:
       - NODE_ENV=development
     volumes:
       - ./node:/home/node/app
+      - ./run/mysqld:/run/mysqld
     ports:
       - "3000:3000"
     command: "npm start"
@@ -20,3 +21,8 @@ services:
     image: "mariadb:latest"
     environment:
       - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./run/mysqld:/run/mysqld
+      - ./data:/var/lib/mysql

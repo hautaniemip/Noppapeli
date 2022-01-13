@@ -2,7 +2,7 @@ import React from 'react';
 import {TouchableOpacity, View, Text, TextInput} from 'react-native';
 
 export default function TodoInput(props) {
-	const [text, setText] = React.useState(null);
+	const [text, setText] = React.useState("");
 
 	function addItem() {
 		setText("")
