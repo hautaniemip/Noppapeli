@@ -82,8 +82,8 @@ export default function CalenderScreen({ navigation }) {
 					}}
 				/>
 				<TodoInput onPress={addTodoItem} />
-				<TouchableOpacity onPress={pickFile}>
-					<Text>Pick File...</Text>
+				<TouchableOpacity onPress={pickFile} style={globalStyles.inputButton}>
+					<Text style={globalStyles.buttonText}>Pick File...</Text>
 				</TouchableOpacity>
 			</SafeAreaView>
 		</>

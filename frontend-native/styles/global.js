@@ -37,6 +37,18 @@ export const globalStyles = StyleSheet.create({
     buttonText: {
         color: '#fafafa'
     },
+	buttonContainer: {
+		flexDirection: 'row',
+		justifyContent: 'center',
+		alignItems: 'center',
+		paddingVertical: 5,
+		marginHorizontal: 10
+	},
+	pickFileButton: {
+		textAlign: 'center',
+		fontSize: 16,
+		textDecorationLine: 'underline',
+	},
 
 
     todoItem: {
@@ -53,11 +65,6 @@ export const globalStyles = StyleSheet.create({
         fontSize: 18,
         textDecorationLine: 'none'
     },
-	dateTimeText: {
-		fontSize: 16,
-		textDecorationLine: 'underline',
-		marginHorizontal: 10
-	},
 
 
     diceContainer: {
