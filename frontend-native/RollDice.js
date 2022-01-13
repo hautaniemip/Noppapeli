@@ -1,5 +1,6 @@
 import React from 'react'
-import { TouchableOpacity, StyleSheet, Text, View, StatusBar, Image } from 'react-native';
+import { TouchableOpacity, Text, View, StatusBar, Image } from 'react-native';
+import { globalStyles } from './styles/global';
 
 import Dice1 from './assets/images/dice1.png';
 import Dice2 from './assets/images/dice2.png';
@@ -33,38 +34,14 @@ export default function RollDice() {
 	}
 
 	return(
-    <View style={styles.container}>
+    <View style={globalStyles.diceContainer}>
       <Image 
-        style={styles.image} 
+        style={globalStyles.diceImage} 
         source={uri}
       />
       <TouchableOpacity onPress={rollDice}>
-        <Text style={styles.texts}>Roll the Dice</Text>
+        <Text style={globalStyles.diceTexts}>Roll the Dice</Text>
       </TouchableOpacity>
     </View>
   )
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#CAD5E2',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  image:{
-    width:200,
-    height:200
-  },
-  texts:{
-    fontSize:26,
-    color:'#35BDD0',
-    marginTop: 30,
-    fontStyle: 'italic',
-    paddingHorizontal: 10,
-    borderColor: '#30475E',
-    borderRadius: 5,
-    borderWidth: 3,
-    fontWeight: 'bold'
-  }
-});
+};

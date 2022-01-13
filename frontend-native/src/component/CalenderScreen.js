@@ -6,6 +6,7 @@ import DeviceInfo from 'react-native-device-info';
 import CalParser from 'cal-parser';
 import TodoInput from './TodoInput';
 import TodoItem from './TodoItem';
+import { globalStyles } from '../../styles/global';
 
 
 
@@ -55,12 +56,12 @@ export default function CalenderScreen({ navigation }) {
 
 	return (
 		<>
-			<StatusBar barStyle={"light-content"} backgroundColor={"#212121"}/>
-			<SafeAreaView style={{padding: 16, flex: 1}}>
-				<Text style={{fontSize: 36, fontWeight: 'bold'}}>Todo</Text>
+			<StatusBar style={globalStyles.titleBar}/>
+			<SafeAreaView style={globalStyles.titleContainer}>
+				<Text style={globalStyles.titleText}>Todo</Text>
 				<FlatList
 					data={todoItems}
-					style={{flex: 1}}
+					style={{flex: 1}} //Mitä tekee hän? -E
 					keyExtractor={(item, index) => index.toString()}
 					data={todoItems.sort((a,  b) => a.time > b.time ? 1 : -1)}
 					renderItem={({item, index}) => {
