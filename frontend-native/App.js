@@ -15,7 +15,6 @@ export default function App() {
 			  	<Tab.Screen
 				name="Kaverit"
 				component={SocialScreen}
-<<<<<<< Updated upstream
 			  	/>
 			  	<Tab.Screen 
 			  	name="Noppa" 
@@ -25,15 +24,6 @@ export default function App() {
 				name="Kalenteri" 
 				component={CalenderScreen}
 		  		/>
-=======
-			  />
-			  <Tab.Screen 
-			  name="Noppa" 
-			  component={NoppaScreen}
-			  }}
-			   />
-			  <Tab.Screen name="Kalenteri" component={CalenderScreen}/>
->>>>>>> Stashed changes
 			</Tab.Navigator>
 		</NavigationContainer>
 	);

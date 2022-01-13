@@ -2,7 +2,6 @@ import React from 'react';
 import { TouchableOpacity, Text, SafeAreaView, FlatList, StatusBar, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { TouchableOpacity, Text, SafeAreaView, FlatList, StatusBar } from 'react-native';
 import DocumentPicker from 'react-native-document-picker';
 import FileSystem from 'react-native-fs';
 import DeviceInfo from 'react-native-device-info';
@@ -14,7 +13,7 @@ import { globalStyles } from '../../styles/global';
 
 
 export default function CalenderScreen({ navigation }) {
-	const [todoItems, setTodoItems] = React.useState([{text: "Buy groceries", time: 123456, completed: true}, {text: "Make blogpost", time: 1234322, completed: false}])
+	const [todoItems, setTodoItems] = React.useState([{text: "Buy groceries", time: new Date(123456), formatedTime: formatTime(new Date(123456)), completed: true}, {text: "Make blogpost", time: new Date(1234322), formatedTime: formatTime(new Date(1234322)), completed: false}])
     const Stack = createNativeStackNavigator();
 
     function MyStack(navigation){
