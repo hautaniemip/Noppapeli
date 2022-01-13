@@ -3,32 +3,22 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { TouchableOpacity, StyleSheet, Text, SafeAreaView, FlatList, View, Button, StatusBar } from 'react-native';
 import CalenderScreen from './src/component/CalenderScreen';
-import RollDice from './RollDice';
+import SocialScreen from './src/component/SocialScreen';
+import NoppaScreen from './src/component/NoppaScreen';
 
 export default function App() {
 
-	const [todoItems, setTodoItems] = React.useState([{text: "Buy groceries", time: 123456, completed: true}, {text: "Make blogpost", time: 1234322, completed: false}])
+
 	const Tab = createBottomTabNavigator();
 
-	  const FriendsScreen = ({ navigation }) => {
-		return (
-			<SafeAreaView>
-				<Text>???</Text>
-			</SafeAreaView>
-		);
-	  };
-	  const NoppaScreen = ({ navigation }) => {
-		return (
-			RollDice()
-		);
-	  };
+
 
 	return (
 		<NavigationContainer >
 			<Tab.Navigator initialRouteName="Noppa">
 			  <Tab.Screen
 				name="Kaverit"
-				component={FriendsScreen}
+				component={SocialScreen}
 			  />
 			  <Tab.Screen 
 			  name="Noppa" 
