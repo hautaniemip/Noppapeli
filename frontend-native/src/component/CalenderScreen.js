@@ -8,10 +8,11 @@ import TodoInput from './TodoInput';
 import TodoItem from './TodoItem';
 
 
-const [todoItems, setTodoItems] = React.useState([{text: "Buy groceries", time: 123456, completed: true}, {text: "Make blogpost", time: 1234322, completed: false}])
 
-export default  function CalenderScreen({ navigation }) {
-		return (
+export default function CalenderScreen({ navigation }) {
+	const [todoItems, setTodoItems] = React.useState([{text: "Buy groceries", time: 123456, completed: true}, {text: "Make blogpost", time: 1234322, completed: false}])
+
+	return (
 		<>
 			<StatusBar barStyle={"light-content"} backgroundColor={"#212121"}/>
 			<SafeAreaView style={{padding: 16, flex: 1}}>
