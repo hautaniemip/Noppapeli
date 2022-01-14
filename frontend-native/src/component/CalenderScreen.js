@@ -13,7 +13,7 @@ import { globalStyles } from '../../styles/global';
 
 
 export default function CalenderScreen({ navigation }) {
-	const [todoItems, setTodoItems] = React.useState([{text: "Write Diary", time: new Date(1984,3,20,6,9), formatedTime: formatTime(new Date(1984,3,20,6,9)), completed: false}, {text: "Make blogpost", time: new Date(1234322), formatedTime: formatTime(new Date(1234322)), completed: false}])
+	const [todoItems, setTodoItems] = React.useState([{text: "Write Diary", time: new Date(1984,8,6,4,20), formatedTime: formatTime(new Date(1984,8,6,4,20)), completed: false}, {text: "Make blogpost", time: new Date(1234322), formatedTime: formatTime(new Date(1234322)), completed: false}])
     const Stack = createNativeStackNavigator();
 
     function MyStack(navigation){
