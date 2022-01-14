@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native'
 
 export const globalStyles = StyleSheet.create({
     titleBar: {
@@ -73,11 +73,11 @@ export const globalStyles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    diceImage:{
+    diceImage: {
         width:200,
         height:200
     },
-    diceTexts:{
+    diceTexts: {
         fontSize:26,
         color:'#35BDD0',
         marginTop: 30,
@@ -87,5 +87,16 @@ export const globalStyles = StyleSheet.create({
         borderRadius: 5,
         borderWidth: 3,
         fontWeight: 'bold'
+    },
+
+
+    socialContainer: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        flex: 1
+    },
+    socialText: {
+        fontSize: 24,
+        textAlign: 'center'
     }
 });

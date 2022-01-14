@@ -1,11 +1,12 @@
-import React from "react";
-import { Text, SafeAreaView } from 'react-native';
+import React from "react"
+import { Text, SafeAreaView } from 'react-native'
+import { globalStyles } from '../../styles/global'
 
 
 export default function SocialScreen({ navigation }) {
     return (
-        <SafeAreaView style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
-			<Text style={{fontSize: 24, textAlign: 'center'}}>Coming Soon...</Text>
+        <SafeAreaView style={globalStyles.socialContainer}>
+			<Text style={globalStyles.socialText}>Coming Soon...</Text>
         </SafeAreaView>
     );
 }
