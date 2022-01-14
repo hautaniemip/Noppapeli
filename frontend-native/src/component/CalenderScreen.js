@@ -51,9 +51,9 @@ export default function CalenderScreen({ navigation }) {
         )
     }
 
-	function addTodoItem(_text)  {
+	function addTodoItem(_text, _date)  {
 		if (_text) {
-			setTodoItems([{text: _text, time: date, formatedTime: formatTime(date), completed: false}, ...todoItems]);
+			setTodoItems([{text: _text, time: _date, formatedTime: formatTime(_date), completed: false}, ...todoItems]);
 		}
 	}
 
