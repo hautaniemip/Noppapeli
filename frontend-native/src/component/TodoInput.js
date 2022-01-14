@@ -30,7 +30,7 @@ export default function TodoInput(props) {
 
 	function addItem() {
 		setText("")
-		props.onPress(text)
+		props.onPress(text, date)
 	}
 
 	function formatTime(_time) {
