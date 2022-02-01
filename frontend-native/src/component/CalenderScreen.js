@@ -11,8 +11,7 @@ import { globalStyles } from '../../styles/global';
 
 
 export default function CalenderScreen({ navigation }) {
-	const [todoItems, setTodoItems] = React.useState([{text: "Buy groceries", time: new Date(123456), formatedTime: formatTime(new Date(123456)), completed: true}, {text: "Make blogpost", time: new Date(1234322), formatedTime: formatTime(new Date(1234322)), completed: false}])
-
+	const [todoItems, setTodoItems] = React.useState([{text: "Write Diary", time: new Date(1984,8,6,4,20), formatedTime: formatTime(new Date(1984,8,6,4,20)), completed: false}, {text: "Make blogpost", time: new Date(1234322), formatedTime: formatTime(new Date(1234322)), completed: false}])
 	function addTodoItem(_text, _date)  {
 		if (_text) {
 			setTodoItems([{text: _text, time: _date, formatedTime: formatTime(_date), completed: false}, ...todoItems]);

@@ -69,7 +69,7 @@ export const globalStyles = StyleSheet.create({
 
     diceContainer: {
         flex: 1,
-        backgroundColor: '#CAD5E2',
+		//backgroundColor: '#CAD5E2',
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -79,11 +79,13 @@ export const globalStyles = StyleSheet.create({
     },
     diceTexts:{
         fontSize:26,
-        color:'#35BDD0',
+		//color:'#35BDD0',
+        backgroundColor: '#212121',
+        color: '#fafafa',
         marginTop: 30,
         fontStyle: 'italic',
         paddingHorizontal: 10,
-        borderColor: '#30475E',
+		//borderColor: '#30475E',
         borderRadius: 5,
         borderWidth: 3,
         fontWeight: 'bold'
